@@ -6,7 +6,6 @@ Features:
 1. Customize keyboard shortcuts to hide the current active tab in the browser
 2. Customize keyboard shortcuts to restore the last closed tab
 3. Customize tab disguises
-
 功能：
 1.自定义快捷键隐藏当前浏览器活动标签页
 2.自定义快捷键恢复上次关闭的标签页
