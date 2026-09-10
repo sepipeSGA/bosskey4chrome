@@ -1,0 +1,686 @@
+/* disguise.css —— 伪装页样式（两个模板：Google 中文首页 / ChatGPT 对话页） */
+
+:root {
+  --text: #202124;
+  --text-weak: #5f6368;
+  --line: #e8eaed;
+  --bg: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei',
+    'PingFang SC', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  height: 100vh;
+  overflow: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: default;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+input {
+  outline: none;
+  border: 0;
+  background: transparent;
+}
+
+/* ============================ 提示条 / Toast ============================ */
+
+.hint-bar {
+  position: fixed;
+  right: 14px;
+  bottom: 12px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(120, 128, 140, 0.1);
+  color: rgba(60, 66, 74, 0.55);
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  user-select: none;
+  pointer-events: none;
+  z-index: 90;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  top: 24px;
+  transform: translateX(-50%) translateY(-8px);
+  background: rgba(31, 35, 41, 0.9);
+  color: #fff;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  opacity: 0;
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ============================== Google 首页模板 ============================= */
+
+.g-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #fff;
+}
+
+.g-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 14px 22px;
+}
+
+.g-nav-links {
+  display: flex;
+  gap: 16px;
+}
+
+.g-link {
+  color: #202124;
+  font-size: 13px;
+  padding: 6px 4px;
+}
+
+.g-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.g-icon-btn {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #5f6368;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.g-icon-btn:hover {
+  background: rgba(60, 64, 67, 0.08);
+}
+
+.g-icon-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.g-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8ab4f8, #d2e3fc);
+  border: 0;
+}
+
+.g-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 78px;
+}
+
+.g-logo {
+  display: flex;
+  align-items: center;
+  font-size: 86px;
+  font-weight: 500;
+  letter-spacing: -2px;
+  line-height: 1;
+  user-select: none;
+}
+
+.g-letter {
+  font-family: 'Product Sans', Arial, sans-serif;
+}
+
+.g-search {
+  margin-top: 28px;
+  width: min(580px, 88vw);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+  background: #fff;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+.g-search:hover,
+.g-search:focus-within {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.18);
+  border-color: rgba(223, 225, 229, 0);
+}
+
+.g-search-plus {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #5f6368;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.g-search-plus svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.g-input {
+  flex: 1;
+  height: 100%;
+  font-size: 16px;
+  color: #202124;
+  min-width: 0;
+}
+
+.g-search-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.g-mic,
+.g-lens {
+  width: 26px;
+  height: 26px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #5f6368;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.g-mic svg,
+.g-lens svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  color: #4285f4;
+}
+
+.g-lens svg {
+  fill: none;
+}
+
+.g-ai {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 12px 0 10px;
+  border: 1px solid #dadce0;
+  border-radius: 18px;
+  background: #fff;
+  color: #202124;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.g-ai:hover {
+  background: #f8f9fa;
+}
+
+.g-ai-spark {
+  width: 16px;
+  height: 16px;
+  color: #9334e6;
+}
+
+.g-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.g-btn {
+  height: 38px;
+  padding: 0 16px;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  background: #f8f9fa;
+  color: #3c4043;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.g-btn:hover {
+  border: 1px solid #dadce0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.g-lang {
+  margin-top: 28px;
+  font-size: 13px;
+  color: #3c4043;
+}
+
+.g-lang-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.g-foot {
+  background: #f2f2f2;
+  border-top: 1px solid #e4e4e4;
+}
+
+.g-foot-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.g-foot-left,
+.g-foot-right {
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.g-foot a {
+  color: #70757a;
+  font-size: 14px;
+}
+
+/* ============================== ChatGPT 对话页模板 ============================= */
+
+.c-page {
+  display: flex;
+  height: 100vh;
+  background: #fff;
+}
+
+.c-side {
+  width: 240px;
+  flex: 0 0 240px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e5e5e5;
+  background: #fff;
+  padding: 12px 8px;
+  overflow-y: auto;
+}
+
+.c-side-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 4px 12px;
+}
+
+.c-brand {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #10a37f;
+  cursor: pointer;
+}
+
+.c-brand-mark {
+  width: 24px;
+  height: 24px;
+}
+
+.c-side-toggle {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #5e5e5e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.c-side-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.c-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 6px;
+}
+
+.c-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: #2d2d2d;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.c-nav-item:hover {
+  background: #f5f5f5;
+}
+
+.c-nav-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.c-nav-active {
+  background: #ececec;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.c-ext {
+  margin-left: auto;
+  color: #9a9a9a;
+  width: 14px !important;
+  height: 14px !important;
+}
+
+.c-side-spacer {
+  flex: 1;
+}
+
+.c-nav-bottom {
+  margin-top: 0;
+  border-top: 1px solid #ececec;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+.c-promo {
+  margin: 12px 6px 6px;
+  padding-top: 12px;
+  border-top: 1px solid #ececec;
+}
+
+.c-promo-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.c-promo-desc {
+  font-size: 12px;
+  color: #6a6a6a;
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+.c-login-full {
+  width: 100%;
+  height: 36px;
+  border: 1px solid #d8d8d8;
+  border-radius: 18px;
+  background: #fff;
+  color: #1a1a1a;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.c-login-full:hover {
+  background: #f7f7f7;
+}
+
+/* --- 主区 --- */
+
+.c-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.c-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+}
+
+.c-title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0d0d0d;
+  cursor: pointer;
+}
+
+.c-caret {
+  width: 18px;
+  height: 18px;
+  color: #5e5e5e;
+}
+
+.c-topbar-right {
+  display: flex;
+  gap: 10px;
+}
+
+.c-btn-dark {
+  height: 36px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 18px;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.c-btn-dark:hover {
+  background: #000;
+}
+
+.c-btn-light {
+  height: 36px;
+  padding: 0 18px;
+  border: 1px solid #d8d8d8;
+  border-radius: 18px;
+  background: #fff;
+  color: #1a1a1a;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.c-btn-light:hover {
+  background: #f7f7f7;
+}
+
+.c-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  gap: 26px;
+  min-height: 0;
+}
+
+.c-hello {
+  margin: 0;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  color: #0d0d0d;
+  letter-spacing: 0.2px;
+  line-height: 1.25;
+}
+
+.c-composer {
+  width: min(720px, 90%);
+  border: 1px solid #d8d8d8;
+  border-radius: 28px;
+  padding: 10px 10px 10px 8px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.c-composer:focus-within {
+  border-color: #1a1a1a;
+}
+
+.c-composer-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.c-plus,
+.c-mic,
+.c-send {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.c-plus {
+  color: #5e5e5e;
+}
+
+.c-mic {
+  color: #0d0d0d;
+}
+
+.c-send {
+  background: #d8d8d8;
+  color: #fff;
+}
+
+.c-plus svg,
+.c-mic svg,
+.c-send svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.c-send svg {
+  transform: rotate(90deg);
+}
+
+.c-input {
+  flex: 1;
+  height: 36px;
+  font-size: 15px;
+  color: #0d0d0d;
+  min-width: 0;
+}
+
+.c-input::placeholder {
+  color: #b0b0b0;
+}
+
+.c-suggest-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.c-suggest {
+  height: 38px;
+  padding: 0 20px;
+  border: 1px solid #d8d8d8;
+  border-radius: 20px;
+  background: #fff;
+  color: #0d0d0d;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.c-suggest:hover {
+  background: #f7f7f7;
+}
+
+.c-legal {
+  padding: 14px 24px 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #8e8e8e;
+  line-height: 1.55;
+}
+
+.c-legal a {
+  color: #8e8e8e;
+  text-decoration: underline;
+  cursor: pointer;
+}

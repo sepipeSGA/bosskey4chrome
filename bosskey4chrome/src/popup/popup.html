@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BossKey 老板键</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="popup">
+      <header class="popup-header">
+        <img class="popup-logo" src="../../icons/icon32.png" alt="" />
+        <div>
+          <div class="popup-title">BossKey 老板键</div>
+          <div class="popup-sub" id="statusText">读取中…</div>
+        </div>
+      </header>
+
+      <div class="status-card" id="statusCard">
+        <span class="dot" id="statusDot"></span>
+        <span id="statusDetail">—</span>
+      </div>
+
+      <div class="actions">
+        <button id="btnHide" class="btn btn-primary" type="button">立即隐藏</button>
+        <button id="btnRestore" class="btn btn-ghost" type="button">立即恢复</button>
+      </div>
+
+      <div class="shortcuts" id="shortcutHint">
+        <span>隐藏：<kbd id="kbdHide">…</kbd></span>
+        <span>恢复：<kbd id="kbdRestore">…</kbd></span>
+      </div>
+
+      <footer class="popup-footer">
+        <a href="#" id="openOptions">打开设置</a>
+        <span class="dot-sep">·</span>
+        <a href="#" id="openShortcuts">修改快捷键</a>
+      </footer>
+    </div>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

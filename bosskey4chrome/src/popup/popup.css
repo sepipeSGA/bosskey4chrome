@@ -1,0 +1,150 @@
+:root {
+  --text: #1f2329;
+  --text-weak: #6b7280;
+  --border: #e3e6ea;
+  --accent: #4c8bf5;
+  --ok: #17a673;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 280px;
+  background: #ffffff;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC',
+    Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.popup {
+  padding: 14px;
+}
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.popup-logo {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.popup-title {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.popup-sub {
+  color: var(--text-weak);
+  font-size: 12px;
+}
+
+.status-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fafbfc;
+  margin-bottom: 12px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c9ced6;
+  flex: 0 0 auto;
+}
+
+.dot.hidden {
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(76, 139, 245, 0.18);
+}
+
+.dot.normal {
+  background: var(--ok);
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.btn {
+  padding: 9px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-ghost {
+  background: #fff;
+  border-color: #ccd2d9;
+  color: var(--text);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.shortcuts {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  color: var(--text-weak);
+  font-size: 12px;
+}
+
+kbd {
+  display: inline-block;
+  padding: 1px 6px;
+  border: 1px solid #cdd3da;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: #fafbfc;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  color: #24292f;
+}
+
+.popup-footer {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 12px;
+}
+
+.popup-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.popup-footer a:hover {
+  text-decoration: underline;
+}
+
+.dot-sep {
+  color: #c9ced6;
+  margin: 0 6px;
+}

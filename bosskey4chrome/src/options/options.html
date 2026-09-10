@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="X0gEF3Z1PuoGTbbzIcNKZl">
+  <head data-page-node-id="fL7SUCPOt8dw3BoXeTUpYP">
+    <meta charset="UTF-8" data-page-node-id="NGLtBV2zO1R9a1vS0uI7uC" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="6uKA0syGXkhJfVH7DeyUmS" />
+    <title>BossKey 老板键 · 设置</title>
+    <link rel="icon" href="../../icons/icon32.png" data-page-node-id="gzbOLrzj2unKPydNhkZG26" />
+    <link rel="stylesheet" href="options.css" data-page-node-id="1IukX8LFsFneKn3CndgIaz" />
+  </head>
+  <body data-page-node-id="aR7BdSRftl2yGCinhfTFEH">
+    <div class="page" data-page-node-id="5bTyBCvjsSyAAv34lHAqD9">
+      <header class="page-header" data-page-node-id="9MHubApxjp769udMDjpBQ2">
+        <img class="page-logo" src="../../icons/icon48.png" alt="BossKey" data-page-node-id="fdVDzGh3cREneWXAV3DRpB" />
+        <div class="page-title" data-page-node-id="c4vq5D5NGOTtARQbmziJTf">
+          <h1 data-page-node-id="dCEL7qIyXM9aJfxppDVOHg">BossKey 老板键</h1>
+          <p data-page-node-id="2gG1AmxcHnhe8cjjXXXJGK">一键隐藏当前窗口所有标签页，再按快捷键原样恢复</p>
+        </div>
+      </header>
+
+      <!-- 快捷键：MV3 无法用代码修改，只能展示 + 引导用户去 Chrome 设置页 -->
+      <section class="card" data-page-node-id="XqMfoKbfYuHtxebyl4mQ0v">
+        <h2 data-page-node-id="W92QWpvULhF4FHwnGAaRMt">快捷键</h2>
+        <p class="hint" data-page-node-id="QcQpncJClx7SRb4uDSf7JX">
+          Chrome 扩展的快捷键无法由代码修改，需要你在系统提供的快捷键页面中自行调整。
+        </p>
+        <div class="shortcut-list" data-page-node-id="2Mk9eoPw3456oEc7lBRHKF">
+          <div class="shortcut-item" data-page-node-id="Z4iNmYGdhyK4Ra4AjbipKy">
+            <span class="shortcut-label" data-page-node-id="E6CWzycxsgwJcVT5jPRuKR">隐藏标签页</span>
+            <kbd id="shortcutHide" data-page-node-id="NRKFPKABMb7xmKbXwUGpw5">读取中…</kbd>
+          </div>
+          <div class="shortcut-item" data-page-node-id="VbhvBcK2oU2aBG1fVZ6LtI">
+            <span class="shortcut-label" data-page-node-id="Bmwv8iXb2BMnY9wkYWJzKF">恢复标签页</span>
+            <kbd id="shortcutRestore" data-page-node-id="gGAhUaqcJIzQugZ7D9Nq5r">读取中…</kbd>
+          </div>
+        </div>
+        <div class="row-actions" data-page-node-id="tz8YzA0YZHiobzs3BD3phN">
+          <button id="openShortcuts" class="btn btn-primary" type="button" data-page-node-id="tgLc0215JCKrEcgKObkSSQ">
+            打开 Chrome 快捷键设置
+          </button>
+          <span class="hint" data-page-node-id="dq7aU3Xku5FbUSuFHrhKxe">快捷键需要在该页面（chrome://extensions/shortcuts）中修改。</span>
+        </div>
+      </section>
+
+      <!-- 预设（只展示 Google / ChatGPT 两套） -->
+      <section class="card" data-page-node-id="Z10hiTzhSS96fqnUsSbf5M">
+        <h2 data-page-node-id="WoKxGC3stjmzyAjljijoei">预设</h2>
+        <p class="hint" data-page-node-id="tMNC3yaD0hLoM82Maat5xE">一键套用整套外观。应用后会同时切换"伪装页配置"中的所有相关字段。</p>
+        <div class="preset-list" id="presetList" data-page-node-id="xfGhJnAZn4PvIg4d29d97C"></div>
+      </section>
+
+      <!-- 伪装页配置 -->
+      <section class="card" data-page-node-id="IsqlD2xlKGGrXqlAfvrldL">
+        <h2 data-page-node-id="cwhANFJ4c0tn2KrWfKz7EE">伪装页配置</h2>
+        <div class="form-grid" data-page-node-id="uyGpar3JjTGPSbnmFIluEI">
+          <div class="field field-full" data-page-node-id="HZ2CkSGu38AVFjPt3f77IW">
+            <label for="disguiseType" data-page-node-id="aQchuiKFZ4bZMFEtceWR1A">伪装页模板</label>
+            <select id="disguiseType" data-page-node-id="oBEaFo3OttPXQ6GAwwHliU">
+              <option value="google" data-page-node-id="UXCGQb5MXkTwzaS0xXoSFz">Google 首页</option>
+              <option value="chatgpt" data-page-node-id="z1hXMaKZ7WR5qWeAoWr5lO">ChatGPT 对话页</option>
+            </select>
+            <span class="field-hint" data-page-node-id="Wy0uyFImEoxayNCQs8pyQ6">决定按下快捷键时显示的页面样式。</span>
+          </div>
+
+          <div class="field field-full" data-page-node-id="2zJ9ddb1GjTBkqfvyE88xS">
+            <label for="disguiseTitle" data-page-node-id="et87qbFPrkrqco721Gsx8V">页面标题</label>
+            <input id="disguiseTitle" type="text" maxlength="120" placeholder="Google" data-page-node-id="6GAvneHvLa91pBshGOasPk" />
+            <span class="field-hint" data-page-node-id="fm3ROEj5VThZKBRPCdlYqr">显示在标签页上；Google 模板同时作为左侧栏大标题。</span>
+          </div>
+
+          <div class="field field-full" data-page-node-id="S6gw7JCz2rzCLIDzJCbCWy">
+            <label for="disguiseIcon" data-page-node-id="PlQ0BP82mmCOIxTYGKqr0j">图标 URL（留空用模板内置默认）</label>
+            <input id="disguiseIcon" type="text" placeholder="https://… 或 data:image/…" data-page-node-id="1kijRPc3VFHUEfrqeudGUH" />
+            <span class="field-hint" data-page-node-id="Nl91idMrfRBSr77c26eInv">建议使用 data URI，避免依赖外网。</span>
+          </div>
+        </div>
+
+        <div class="preview-block" data-page-node-id="xssUOhXwFXiqkUcrrYdIN2">
+          <div class="preview-label" data-page-node-id="Hd6aw9Znhm04zTFUfNbwgu">实时预览</div>
+          <div class="preview-frame" data-page-node-id="eZEEkyLjK6q8LOAdXf7in3">
+            <iframe id="previewFrame" title="伪装页预览" data-page-node-id="T9uT7D21JSVfBONzZnPjX1"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- 行为开关 -->
+      <section class="card" data-page-node-id="HKdOWJqdxugorqne3BS2o8">
+        <h2 data-page-node-id="VKmvwtCPqB79tJHBDgSQga">行为开关</h2>
+        <div class="notice" data-page-node-id="qZQyzVPN2QydueiHX6ESVJ">
+          隐藏键随时可用：任何时候按下都会把当前窗口的标签页收起来并换成伪装页，
+          <strong data-page-node-id="5DvNEgpnhWcVmbFCD2DDSR">快照每次覆盖，恢复的永远是最后一次隐藏的那批标签页</strong>。
+        </div>
+        <label class="switch-row" data-page-node-id="tSCP3fSgp0cpTo830NzqEU">
+          <input id="restorePinned" type="checkbox" data-page-node-id="9g8TTP6bTzuqhc7xM9vjYR" />
+          <span class="switch-body" data-page-node-id="ia5jxR2ZhA0aax3bPUHswU">
+            <span class="switch-name" data-page-node-id="6joybv6yDUxbXAOwLEeoqB">连固定标签页一起隐藏</span>
+            <span class="switch-desc" data-page-node-id="xEsWed7Mk00lssI2TA0LJA">关闭后，被固定的标签页会原样留在窗口里，只隐藏其余标签。</span>
+          </span>
+        </label>
+        <label class="switch-row" data-page-node-id="HcBv07R953qaZwPbhxHodn">
+          <input id="hideToolbarHint" type="checkbox" data-page-node-id="dinC3TDY7l7vfHaf8L5YJt" />
+          <span class="switch-body" data-page-node-id="nTjEcDppDcn5csqokeHANU">
+            <span class="switch-name" data-page-node-id="BepKLBAGnCVQwK0PpfNnuP">伪装页底部显示恢复提示</span>
+            <span class="switch-desc" data-page-node-id="6z2tGGLbANvpzaDYzc8iAj">右下角显示一行很淡的"按 XXX 恢复"提示，防止自己忘记快捷键。</span>
+          </span>
+        </label>
+      </section>
+
+      <!-- 危险区 -->
+      <section class="card card-danger" data-page-node-id="Sq0HIRxelxMdN52t9QF1gu">
+        <h2 data-page-node-id="BesZkdClWrpHd202Ty5ZMy">危险区</h2>
+        <div class="danger-row" data-page-node-id="fxnk71v1IKRYDO80k8IHEc">
+          <div data-page-node-id="TycJIQzR24lcTPxkf3mtoP">
+            <div class="danger-name" data-page-node-id="JSQRHGEEmkILqliJDb90Om">清除已保存的快照</div>
+            <div class="danger-desc" id="snapshotInfo" data-page-node-id="YLDQOFcw9WFrJ6i9YOSTt5">当前没有已保存的快照。</div>
+          </div>
+          <div class="danger-actions" data-page-node-id="gBjpKp1UHHDDFDi6021LEN">
+            <button id="clearSnapshot" class="btn btn-danger" type="button" data-page-node-id="lyGXrDPr7gYkAWRpFohly9">清除快照</button>
+            <button id="resetSettings" class="btn btn-ghost" type="button" data-page-node-id="KQLqUCv51Gi0OA9pWtDtAy">恢复默认设置</button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="page-footer" data-page-node-id="LiAvWAAnn3JeoGFEYmhH53">
+        <span data-page-node-id="GUhTp0twdknoLRuijVKasR">BossKey 老板键 v1.3.0 · 所有改动自动保存</span>
+      </footer>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" data-page-node-id="KKGd8fVybhQ6jlKFFi5vcG"></div>
+
+    <script type="module" src="options.js"></script>
+  </body>
+</html>
