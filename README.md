@@ -13,6 +13,6 @@ Features:
 2.自定义快捷键恢复上次关闭的标签页
 3.自定义伪装标签页
 
-Instructions: Download the .crx file directly and load it in the Chrome browser.
+Instructions: Download the entire folder and open it in Chrome: “Load unpacked application”
 
-使用方法：当前获得直接下载.crx文件并用chrome浏览器加载。
+使用方法：下载整个文件夹并用chrome加载：“加载未打包的程序”
