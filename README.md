@@ -16,10 +16,13 @@ Features:
 Instructions: Download the entire folder and open it in Chrome: “Load unpacked application”
 
 使用方法：下载整个文件夹并用chrome加载：“加载未打包的程序”
+
 <img width="520" height="693" alt="75e6bdf09e6bdfbde24feeb8129551f5" src="https://github.com/user-attachments/assets/7eeafa02-6c6a-4712-a0dd-07d6f9c447a8" />
 
 插件页面：
+
 <img width="520" height="494" alt="c3a49e3aeaf76f5b10ab60dee0ff0aeb" src="https://github.com/user-attachments/assets/878e528e-39b4-4543-bb4d-29fccb77a82d" />
 
 伪装页：
+
 <img width="520" height="309" alt="002791e1805c37fa88fdc2c3fa809b37" src="https://github.com/user-attachments/assets/aec9c17c-92ca-49e3-9227-b6f842d4e95c" />
